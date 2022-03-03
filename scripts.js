@@ -4,14 +4,19 @@ function computerPlay() {
     return choices[Math.floor(Math.random() * 3)];
 }
 
-const computerSelection = computerPlay();
-let playerSelection = prompt("Choose Rock, paper, or scissors!").toLowerCase();
+let computerSelection;
+let playerSelection;
 
-while (!choices.includes(playerSelection)) {
-    playerSelection = prompt("You must choose ROCK, PAPER, or SCISSORS.").toLowerCase();
-}
+function playRound() {
 
-function playRound(playerSelection, computerSelection) {
+    computerSelection = computerPlay();
+
+    playerSelection = prompt("Choose Rock, paper, or scissors!").toLowerCase();
+
+    while (!choices.includes(playerSelection)) {
+        playerSelection = prompt("You must choose ROCK, PAPER, or SCISSORS.").toLowerCase();
+    }
+
     if (playerSelection == computerSelection) {
         return "We have a tie!";
     } else if (playerSelection == "rock") {
@@ -35,6 +40,22 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-const Result = playRound(playerSelection, computerSelection);
+function Game() {
+    let playerScore = 0;
+    let computerScore = 0;
 
-alert(`You chose ${playerSelection} and your opponent chose ${computerSelection}. ` + Result);
+    for (let i = 0; playerScore < 5  && computerScore < 5; i++) {
+        const roundResult = playRound();
+        if (roundResult == "You win!") {
+            playerScore += 1;
+        } else if (roundResult == "You lose!") {
+            computerScore += 1;
+        } 
+        alert(`You chose ${playerSelection} and your opponent chose ${computerSelection}.`);
+    }
+
+    console.log(`Player: ${playerScore}, Opponent: ${computerScore}`);
+}
+
+
+Game();
