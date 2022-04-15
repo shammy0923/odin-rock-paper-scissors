@@ -4,11 +4,18 @@ html, body {
     height: 100%;
 }
 
-.buttons {
+.game-board {
     display: flex;
-    height: 100%;
+    gap: 3rem;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.buttons {
+    display: flex;
     gap: 3rem;
 }
 
@@ -30,4 +37,9 @@ html, body {
 #scissors {
     background-image: url(images/Scissors.png);
     background-size: cover;
+}
+
+.results {
+    display: flex;
+    gap: 3rem;
 }
