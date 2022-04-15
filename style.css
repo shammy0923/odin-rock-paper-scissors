@@ -16,3 +16,18 @@ html, body {
     width: 10rem;
     height: 10rem;
 }
+
+#rock {
+    background-image: url(images/Rock.png);
+    background-size: cover;
+}
+
+#paper {
+    background-image: url(images/Paper.png);
+    background-size: cover;
+}
+
+#scissors {
+    background-image: url(images/Scissors.png);
+    background-size: cover;
+}
